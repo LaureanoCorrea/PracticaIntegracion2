@@ -1,0 +1,35 @@
+<main>
+  <div id="productList">
+    <table id="product_table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Precio</th>
+          <th>Código</th>
+          <th>Stock</th>
+          <th>Categoría</th>
+          <th>id</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{product.title}}</td>
+          <td> {{product.description}}</td>
+          <td> $ {{product.price}}</td>
+          {{!-- <P><strong>Imagen:</strong> <img src="{{product.thumbnail}}"></P> --}}
+          <td> {{product.code}}</td>
+          <td> {{product.stock}}</td>
+          <td> {{product.category}}</td>
+          <td> {{product._id}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <form action="/cart/{{ product._id }}" method="POST">
+    <input type="hidden" name="quantity" value="1" />
+    <button type="submit">Agregar al carrito</button>
+  </form>
+
+</main>
